@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nandakishor P B | VLSI | Embedded Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+
+:root{
+  --hero-h:240deg;
+  --skills-h:185deg;
+  --exp-h:38deg;
+  --proj-h:152deg;
+  --ach-h:350deg;
+  --edu-h:270deg;
+
+  --c-indigo:#6d63ff;
+  --c-cyan:#22d3ee;
+  --c-amber:#fbbf24;
+  --c-emerald:#34d399;
+  --c-rose:#fb7185;
+  --c-violet:#a78bfa;
+  --c-dark:#12182a;
+
+  --glass-bg:rgba(255,255,255,0.12);
+  --glass-bg-light:rgba(255,255,255,0.18);
+  --glass-strong:rgba(255,255,255,0.22);
+  --glass-border:rgba(255,255,255,0.22);
+  --glass-shadow:0 10px 34px rgba(0,0,0,0.22), 0 2px 10px rgba(0,0,0,0.12);
+  --glass-shadow-lg:0 18px 55px rgba(0,0,0,0.28), 0 4px 18px rgba(0,0,0,0.14);
+
+  --text-primary:#f8f8ff;
+  --text-secondary:rgba(248,248,255,0.82);
+  --text-muted:rgba(248,248,255,0.56);
+}
+
+body{
+  background:#0b1020;
+  color:var(--text-primary);
+  font-family:'Manrope',sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:#0b1020}
+::-webkit-scrollbar-thumb{background:var(--c-indigo);border-radius:2px}
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.25rem;
+}
+
+.cert-card{
+  overflow:hidden;
+  padding:0;
+}
+
+.cert-img-wrap{
+  width:100%;
+  height:220px;
+  overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.cert-img-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:brightness(0.92) contrast(1.03) saturate(1.02);
+}
+
+.cert-body{
+  padding:1.25rem 1.35rem 1.4rem;
+}
+
+.cert-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:1rem;
+  margin-bottom:.7rem;
+}
+
+.cert-name{
+  font-size:1rem;
+  font-weight:800;
+  color:var(--text-primary);
+  line-height:1.4;
+}
+
+.cert-org{
+  font-size:.82rem;
+  color:var(--text-muted);
+}
+
+.cert-badge{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#67e8f9;
+  background:rgba(34,211,238,0.12);
+  border:1px solid rgba(34,211,238,0.22);
+  padding:5px 10px;
+  border-radius:999px;
+  white-space:nowrap;
+}
+
+.cert-desc{
+  font-size:13px;
+  color:var(--text-secondary);
+  line-height:1.7;
+}
+.exp-github-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:14px;
+  padding:10px 14px;
+  border-radius:12px;
+  text-decoration:none;
+  color:#ffffff;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.14);
+  transition:all .3s ease;
+  font-size:14px;
+  font-weight:600;
+}
+
+.exp-github-link:hover{
+  background:rgba(255,255,255,0.14);
+  border-color:rgba(255,255,255,0.24);
+  transform:translateY(-2px);
+}
+
+.github-icon{
+  width:18px;
+  height:18px;
+  display:block;
+  object-fit:contain;
+}
+/* Section backgrounds */
+.sec-hero-bg{
+  background:
+    radial-gradient(ellipse 80% 70% at 20% 30%, rgba(109,99,255,0.32) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(167,139,250,0.18) 0%, transparent 55%),
+    linear-gradient(180deg,#10172d 0%,#0b1020 100%);
+}
+.sec-skills-bg{
+  background:
+    radial-gradient(ellipse 70% 60% at 10% 50%, rgba(34,211,238,0.24) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 90% 20%, rgba(45,212,191,0.14) 0%, transparent 55%),
+    linear-gradient(180deg,#0d1624 0%,#0a1320 100%);
+}
+.sec-exp-bg{
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 40%, rgba(255, 193, 36, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 15% 80%, rgba(245,158,11,0.12) 0%, transparent 55%),
+    linear-gradient(180deg,#15131f 0%,#0d111b 100%);
+}
+.sec-proj-bg{
+  background:
+    radial-gradient(ellipse 70% 65% at 15% 35%, rgba(52,211,153,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 50% at 85% 75%, rgba(20,184,166,0.12) 0%, transparent 55%),
+    linear-gradient(180deg,#0d1717 0%,#091112 100%);
+}
+.sec-ach-bg{
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 30%, rgba(251,113,133,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 20% 70%, rgba(244,114,182,0.10) 0%, transparent 55%),
+    linear-gradient(180deg,#17111a 0%,#0f0c14 100%);
+}
+.sec-edu-bg{
+  background:
+    radial-gradient(ellipse 70% 65% at 20% 40%, rgba(167,139,250,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 80% 70%, rgba(129,140,248,0.12) 0%, transparent 55%),
+    linear-gradient(180deg,#121224 0%,#0c1020 100%);
+}
+.sec-contact-bg{
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 50%, rgba(109,99,255,0.24) 0%, transparent 65%),
+    linear-gradient(180deg,#0d1326 0%,#090d18 100%);
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;height:64px;
+  background:rgba(11,16,32,0.72);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(255,255,255,0.12);
+}
+.nav-logo{
+  font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;
+  color:var(--c-indigo);letter-spacing:.06em;display:flex;align-items:center;gap:10px;
+}
+.nav-logo-mark{
+  width:30px;height:30px;
+  background:linear-gradient(135deg,var(--c-indigo),#9aa3ff);
+  border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:#fff;font-weight:800;
+  box-shadow:0 0 16px rgba(109,99,255,0.45);
+}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:11px;font-weight:700;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--text-primary)}
+.nav-cta{
+  padding:7px 18px;
+  background:linear-gradient(135deg,var(--c-indigo),#7c84ff);
+  font-size:11px;font-weight:700;color:#fff;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:6px;transition:opacity .2s,transform .15s;
+  box-shadow:0 0 20px rgba(109,99,255,0.4);
+}
+.nav-cta:hover{opacity:.88;transform:translateY(-1px)}
+
+/* HERO */
+#hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:80px 5% 0;position:relative;overflow:hidden;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;width:100%;
+  max-width:1200px;margin:0 auto;position:relative;z-index:1;
+}
+#hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(109,99,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(109,99,255,0.06) 1px, transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--c-cyan);
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.75rem;
+  background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.2);
+  padding:6px 14px;border-radius:999px;
+}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--c-cyan);animation:blink 1.5s ease-in-out infinite;box-shadow:0 0 8px var(--c-cyan)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+h1.hero-name{
+  font-size:clamp(3rem,6.5vw,5.2rem);font-weight:800;
+  line-height:1.02;letter-spacing:-.03em;margin-bottom:1.25rem;
+}
+h1.hero-name .last{
+  display:block;
+  background:linear-gradient(135deg,#b4bcff 0%,#d8a6ff 50%,#ff9ec5 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-role{
+  font-family:'JetBrains Mono',monospace;font-size:12px;
+  color:var(--text-secondary);margin-bottom:1.5rem;line-height:1.8;
+}
+.hero-role span{color:#c8ceff;font-weight:500}
+.hero-desc{font-size:15px;color:var(--text-secondary);max-width:460px;line-height:1.8;margin-bottom:2.5rem}
+
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2.5rem}
+.hpill{
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+  border:1px solid;font-weight:500;position:relative;overflow:hidden;
+}
+.hpill::before{content:'';position:absolute;inset:0;background:inherit;filter:blur(8px);opacity:0;transition:opacity .3s}
+.hpill:hover::before{opacity:.6}
+.hp1{color:#c8ceff;border-color:rgba(200,206,255,0.3);background:rgba(109,99,255,0.16)}
+.hp2{color:#8ff3ff;border-color:rgba(143,243,255,0.3);background:rgba(34,211,238,0.14)}
+.hp3{color:#8ff0c8;border-color:rgba(143,240,200,0.3);background:rgba(52,211,153,0.14)}
+.hp4{color:#ffe18a;border-color:rgba(255,225,138,0.3);background:rgba(251,191,36,0.14)}
+
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-solid{
+  padding:11px 24px;
+  background:linear-gradient(135deg,var(--c-indigo),#7c84ff);
+  color:#fff;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  border-radius:8px;transition:opacity .2s,transform .15s;
+  display:inline-flex;align-items:center;gap:8px;
+  box-shadow:0 0 24px rgba(109,99,255,0.45);
+}
+.btn-solid:hover{opacity:.88;transform:translateY(-2px)}
+.btn-outline{
+  padding:11px 24px;border:1px solid rgba(255,255,255,0.16);color:var(--text-primary);
+  font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  border-radius:8px;transition:border-color .2s,background .2s,transform .15s;
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--glass-bg);backdrop-filter:blur(10px);
+}
+.btn-outline:hover{border-color:rgba(255,255,255,0.35);background:var(--glass-bg-light);transform:translateY(-2px)}
+
+.hero-stats{
+  display:flex;gap:2.5rem;margin-top:3rem;
+  padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08);
+}
+.stat-num{font-family:'JetBrains Mono',monospace;font-size:2rem;font-weight:700;display:block;line-height:1}
+.sn1{color:#b4bcff;text-shadow:0 0 20px rgba(180,188,255,0.5)}
+.sn2{color:#ff9ec5;text-shadow:0 0 20px rgba(255,158,197,0.5)}
+.sn3{color:#7bf0ba;text-shadow:0 0 20px rgba(123,240,186,0.5)}
+.sn4{color:#ffd66f;text-shadow:0 0 20px rgba(255,214,111,0.5)}
+.stat-label{font-size:10px;font-weight:600;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase;margin-top:4px;display:block}
+
+.hero-right{
+  position:relative;height:520px;
+  display:flex;align-items:center;justify-content:center;
+}
+.profile-frame{
+  position:absolute;
+  width:220px;
+  height:260px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-55%);
+  z-index:2;
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(255,255,255,0.08);
+  box-shadow:0 0 0 1px rgba(255,255,255,0.16), var(--glass-shadow-lg);
+  border:1px solid rgba(255,255,255,0.20);
+  backdrop-filter:blur(12px) saturate(130%);
+  -webkit-backdrop-filter:blur(12px) saturate(130%);
+}
+.profile-frame img{
+  filter:brightness(0.96) contrast(1.04) saturate(1.02);
+}
+
+/* Floating badges */
+.fbadge{
+  position:absolute;z-index:5;
+  background:rgba(18,24,42,0.72);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:12px;
+  padding:9px 14px;
+  box-shadow:var(--glass-shadow);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  display:flex;align-items:center;gap:10px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
+  white-space:nowrap;
+  animation:fbFloat 4s ease-in-out infinite;
+}
+.fbd{width:7px;height:7px;border-radius:50%;flex-shrink:0;animation:blink 1.5s ease-in-out infinite}
+.fbd1{background:#b4bcff;box-shadow:0 0 8px #b4bcff}
+.fbd2{background:#ff9ec5;box-shadow:0 0 8px #ff9ec5}
+.fbd3{background:#7bf0ba;box-shadow:0 0 8px #7bf0ba}
+.fbd4{background:#ffd66f;box-shadow:0 0 8px #ffd66f}
+.fb1{top:8%;left:0;animation-delay:0s}
+.fb2{top:42%;right:0;animation-delay:.9s}
+.fb3{bottom:14%;left:5%;animation-delay:1.8s}
+.fb4{top:16%;right:-10px;animation-delay:0.4s;font-size:10px}
+@keyframes fbFloat{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-9px) rotate(.5deg)}}
+
+.dchip{
+  position:absolute;z-index:10;
+  cursor:grab;user-select:none;
+  filter:drop-shadow(0 6px 24px rgba(109,99,255,0.25));
+  transition:filter .2s;
+}
+.dchip:active{cursor:grabbing}
+.dchip:hover{filter:drop-shadow(0 12px 40px rgba(109,99,255,0.5))}
+
+/* MARQUEE */
+.sep-band{
+  background:rgba(255,255,255,0.03);
+  border-top:1px solid rgba(255,255,255,0.07);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  padding:18px 0;overflow:hidden;position:relative;
+}
+.sep-scroll{display:flex;gap:3rem;animation:marquee 28s linear infinite;width:max-content}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.sep-item{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:rgba(200,206,255,0.58);letter-spacing:.1em;text-transform:uppercase;
+  white-space:nowrap;display:flex;align-items:center;gap:12px;
+}
+.sep-item::after{content:'·';color:rgba(180,188,255,0.4)}
+
+/* SECTION WRAPPER */
+.section{max-width:1200px;margin:0 auto;padding:90px 5%}
+.sec-header{margin-bottom:3rem}
+.sec-label{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  letter-spacing:.15em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:.6rem;
+  padding:4px 12px;border-radius:4px;border:1px solid;
+}
+.sl-cyan{color:var(--c-cyan);border-color:rgba(34,211,238,0.3);background:rgba(34,211,238,0.08)}
+.sl-amber{color:var(--c-amber);border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.08)}
+.sl-emerald{color:var(--c-emerald);border-color:rgba(52,211,153,0.3);background:rgba(52,211,153,0.08)}
+.sl-rose{color:var(--c-rose);border-color:rgba(251,113,133,0.3);background:rgba(251,113,133,0.08)}
+.sl-violet{color:var(--c-violet);border-color:rgba(167,139,250,0.3);background:rgba(167,139,250,0.08)}
+.sl-indigo{color:#c8ceff;border-color:rgba(200,206,255,0.3);background:rgba(109,99,255,0.1)}
+
+.sec-title{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;letter-spacing:-.025em;color:var(--text-primary);margin-top:.4rem}
+.sec-sub{font-size:14px;color:var(--text-muted);margin-top:.5rem;max-width:540px;line-height:1.7}
+
+/* GLASS CARD */
+.glass-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.08));
+  border:1px solid var(--glass-border);
+  border-radius:18px;
+  backdrop-filter:blur(22px) saturate(150%);
+  -webkit-backdrop-filter:blur(22px) saturate(150%);
+  box-shadow:var(--glass-shadow);
+  transition:box-shadow .35s,border-color .35s,transform .35s,background .35s;
+}
+.glass-card:hover{
+  box-shadow:var(--glass-shadow-lg);
+  border-color:rgba(255,255,255,0.32);
+  transform:translateY(-6px);
+  background:linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.10));
+}
+
+/* SKILLS */
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.skill-card{padding:1.5rem}
+.sk-label{
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;
+  display:flex;align-items:center;gap:8px;font-weight:700;
+}
+.sk-cyan{color:var(--c-cyan)}
+.sk-amber{color:var(--c-amber)}
+.sk-emerald{color:var(--c-emerald)}
+.sk-violet{color:var(--c-violet)}
+
+.chip-wrap{display:flex;flex-wrap:wrap;gap:7px}
+.chip{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:5px;padding:4px 10px;
+  color:var(--text-secondary);
+  transition:border-color .2s,color .2s,background .2s,box-shadow .2s;
+  display:flex;align-items:center;gap:5px;
+}
+.chip::before{content:'›';opacity:0.4;font-size:10px}
+.chip:hover{
+  border-color:rgba(34,211,238,0.5);color:var(--c-cyan);
+  background:rgba(34,211,238,0.08);box-shadow:0 0 12px rgba(34,211,238,0.15);
+}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column;gap:1.5rem;position:relative}
+.exp-list::before{
+  content:'';
+  position:absolute;
+  left:18px;
+  top:8px;
+  bottom:8px;
+  width:1px;
+  background:linear-gradient(180deg, rgba(251,191,36,0), rgba(251,191,36,0.45), rgba(251,191,36,0));
+  opacity:.55;
+}
+.exp-card{
+  border-radius:18px;overflow:hidden;position:relative;transform-origin:center;
+}
+.exp-card::before{
+  content:'';
+  position:absolute;
+  top:22px;
+  left:10px;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(251,191,36,0.95) 0%, rgba(251,191,36,0.45) 45%, rgba(251,191,36,0) 75%);
+  box-shadow:0 0 20px rgba(251,191,36,0.35);
+  z-index:3;
+}
+.exp-card-inner{
+  display:grid;grid-template-columns:220px 1fr;gap:0;
+}
+.exp-img-side{
+  position:relative;min-height:200px;overflow:hidden;
+}
+.exp-img-side img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(0.82) saturate(1.02) contrast(1.03);
+  transition:filter .5s ease, transform .6s ease;
+}
+.exp-card:hover .exp-img-side img{
+  filter:brightness(0.92) saturate(1.08) contrast(1.05);
+  transform:scale(1.05);
+}
+.exp-img-side::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(8,10,20,0.18) 100%);
+}
+.exp-text-side{
+  padding:1.75rem 2rem;
+  background:linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.08));
+  backdrop-filter:blur(18px) saturate(140%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  border-left:1px solid rgba(255,255,255,0.16);
+}
+.exp-period{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;margin-bottom:.3rem}
+.ep-amber{color:var(--c-amber)}
+.ep-cyan{color:var(--c-cyan)}
+.ep-emerald{color:var(--c-emerald)}
+.ep-violet{color:var(--c-violet)}
+.exp-org{font-size:13px;font-weight:700;color:var(--text-muted)}
+.exp-type{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.35);margin-top:.2rem;text-transform:uppercase;letter-spacing:.06em}
+.exp-title{font-size:17px;font-weight:800;color:var(--text-primary);margin:1rem 0 .5rem;letter-spacing:-.01em}
+.exp-desc{font-size:13px;color:var(--text-secondary);line-height:1.75}
+
+/* CERTIFICATIONS */
+.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.cert-card{padding:1.4rem 1.5rem;position:relative;overflow:hidden}
+.cert-card::before{
+  content:'';
+  position:absolute;
+  inset:0 auto 0 0;
+  width:3px;
+  background:linear-gradient(180deg,var(--c-cyan),var(--c-violet));
+  opacity:.9;
+}
+.cert-top{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  align-items:flex-start;
+  margin-bottom:.7rem;
+}
+.cert-name{font-size:1rem;font-weight:800;color:var(--text-primary);line-height:1.4}
+.cert-org{font-size:.82rem;color:var(--text-muted)}
+.cert-badge{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#67e8f9;
+  background:rgba(34,211,238,0.12);
+  border:1px solid rgba(34,211,238,0.22);
+  padding:5px 10px;
+  border-radius:999px;
+  white-space:nowrap;
+}
+.cert-desc{font-size:13px;color:var(--text-secondary);line-height:1.7}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.proj-card{
+  border-radius:16px;overflow:hidden;display:flex;flex-direction:column;
+  position:relative;
+}
+.proj-img{width:100%;height:190px;overflow:hidden;position:relative;}
+.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;filter:brightness(0.78)}
+.proj-card:hover .proj-img img{transform:scale(1.06);filter:brightness(0.92)}
+.proj-img-overlay{
+  position:absolute;bottom:0;left:0;right:0;height:50%;
+  background:linear-gradient(to top, rgba(8,10,20,0.95) 0%, transparent 100%);
+}
+.proj-img-fallback{
+  width:100%;height:100%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(135deg,rgba(52,211,153,0.15),rgba(34,211,238,0.08));
+}
+.pif-icon{font-size:36px;opacity:.5}
+.pif-label{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase}
+.proj-body{
+  padding:1.25rem 1.4rem;flex:1;display:flex;flex-direction:column;
+  background:var(--glass-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-top:1px solid var(--glass-border);
+}
+.proj-index{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-muted);letter-spacing:.1em;margin-bottom:.4rem}
+.proj-name{font-size:13px;font-weight:800;color:var(--text-primary);margin-bottom:.4rem;line-height:1.35;letter-spacing:-.01em}
+.proj-desc{font-size:12px;color:var(--text-secondary);line-height:1.65;flex:1;margin-bottom:.85rem}
+.proj-tags{display:flex;flex-wrap:wrap;gap:5px}
+.ptag{
+  font-family:'JetBrains Mono',monospace;font-size:9px;padding:3px 8px;border-radius:4px;border:1px solid;
+  display:flex;align-items:center;gap:4px;
+}
+.ptag::before{content:'#';opacity:0.5}
+.pt1{color:#c8ceff;border-color:rgba(200,206,255,0.25);background:rgba(109,99,255,0.1)}
+.pt2{color:#8ff3ff;border-color:rgba(143,243,255,0.25);background:rgba(34,211,238,0.1)}
+.pt3{color:#8ff0c8;border-color:rgba(143,240,200,0.25);background:rgba(52,211,153,0.1)}
+.pt4{color:#ffe18a;border-color:rgba(255,225,138,0.25);background:rgba(251,191,36,0.1)}
+.pt5{color:#ffc2da;border-color:rgba(255,194,218,0.25);background:rgba(251,113,133,0.1)}
+
+.proj-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;z-index:5;
+  opacity:0;transition:opacity .3s;
+}
+.pc1::before{background:linear-gradient(90deg,var(--c-indigo),var(--c-cyan))}
+.pc2::before{background:linear-gradient(90deg,var(--c-rose),var(--c-amber))}
+.pc3::before{background:linear-gradient(90deg,var(--c-emerald),var(--c-cyan))}
+.pc4::before{background:linear-gradient(90deg,var(--c-amber),var(--c-rose))}
+.pc5::before{background:linear-gradient(90deg,var(--c-violet),var(--c-indigo))}
+.pc6::before{background:linear-gradient(90deg,var(--c-cyan),var(--c-emerald))}
+.proj-card:hover::before{opacity:1}
+
+/* ACHIEVEMENTS */
+.ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.ach-card{
+  position:relative;border-radius:16px;overflow:hidden;
+  min-height:320px;
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow:var(--glass-shadow);
+  transition:box-shadow .3s,transform .3s;
+}
+.ach-card:hover{box-shadow:var(--glass-shadow-lg);transform:translateY(-5px)}
+.ach-bg{position:absolute;inset:0;z-index:0;}
+.ach-bg img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(0.48) saturate(0.78);
+  transition:filter .4s,transform .5s;
+}
+.ach-card:hover .ach-bg img{filter:brightness(0.62) saturate(0.94);transform:scale(1.05)}
+.ac1 .ach-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(109,99,255,0.35) 0%,transparent 60%)}
+.ac2 .ach-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(251,113,133,0.35) 0%,transparent 60%)}
+.ac3 .ach-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(52,211,153,0.35) 0%,transparent 60%)}
+.ac4 .ach-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(167,139,250,0.35) 0%,transparent 60%)}
+.ach-overlay{
+  position:absolute;bottom:0;left:0;right:0;z-index:2;
+  padding:1.5rem 1.75rem 1.75rem;
+  background:linear-gradient(to top, rgba(8,10,20,0.92) 0%, rgba(8,10,20,0.6) 60%, transparent 100%);
+  backdrop-filter:blur(2px);
+}
+.ach-trophy{font-size:22px;margin-bottom:.5rem}
+.ach-title{font-size:16px;font-weight:800;color:#fff;margin-bottom:.4rem;line-height:1.3;text-shadow:0 2px 8px rgba(0,0,0,0.5)}
+.ach-desc{font-size:12px;color:rgba(255,255,255,0.78);line-height:1.6;text-shadow:0 1px 4px rgba(0,0,0,0.5)}
+.ach-badge{
+  display:inline-flex;align-items:center;gap:6px;margin-top:.85rem;
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  border-radius:999px;padding:4px 12px;border:1px solid;font-weight:600;
+}
+.ab1{color:#c8ceff;border-color:rgba(200,206,255,0.4);background:rgba(109,99,255,0.2)}
+.ab2{color:#ffc2da;border-color:rgba(255,194,218,0.4);background:rgba(251,113,133,0.2)}
+.ab3{color:#8ff0c8;border-color:rgba(143,240,200,0.4);background:rgba(52,211,153,0.2)}
+.ab4{color:#ddd0ff;border-color:rgba(221,208,255,0.4);background:rgba(167,139,250,0.2)}
+
+/* EDUCATION */
+.edu-list{display:flex;flex-direction:column;gap:1.25rem}
+.edu-card{
+  padding:1.75rem;
+  display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start;
+}
+.edu-deg{font-size:16px;font-weight:800;color:var(--text-primary);margin-bottom:.25rem}
+.edu-inst{font-size:13px;color:var(--text-muted)}
+.edu-score{font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:700;text-align:right}
+.es1{color:#c8ceff;text-shadow:0 0 16px rgba(200,206,255,0.45)}
+.es2{color:#ffc2da;text-shadow:0 0 16px rgba(255,194,218,0.45)}
+.es3{color:#8ff0c8;text-shadow:0 0 16px rgba(143,240,200,0.45)}
+.edu-year{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted);text-align:right;margin-top:.25rem}
+
+/* CONTACT */
+.contact-inner{max-width:1200px;margin:0 auto;padding:90px 5%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.contact-heading{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-bottom:1.25rem}
+.contact-heading span{
+  background:linear-gradient(135deg,var(--c-cyan),var(--c-violet));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.contact-sub{font-size:14px;color:var(--text-muted);line-height:1.75;max-width:380px}
+.contact-links{display:flex;flex-direction:column;gap:.85rem}
+.clcard{
+  display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;
+  backdrop-filter:blur(16px);
+  transition:border-color .2s,background .2s,transform .2s;
+}
+.clcard:hover{border-color:rgba(255,255,255,0.22);background:rgba(255,255,255,0.08);transform:translateX(5px)}
+.cl-icon{width:42px;height:42px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.09);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px}
+.cl-type{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase}
+.cl-val{font-size:13px;font-weight:600;color:var(--text-primary);margin-top:2px}
+
+/* FOOTER */
+footer{
+  background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.06);
+  padding:1.75rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;
+}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted);letter-spacing:.05em}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted);letter-spacing:.05em;transition:color .2s}
+.footer-links a:hover{color:var(--text-primary)}
+
+.courses-card{padding:1.5rem;margin-top:1.25rem}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-exp{
+  opacity:0;
+  transform:translateY(36px) scale(.985);
+  transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1),box-shadow .4s ease;
+}
+.reveal-exp.visible{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero-desc,.hero-eyebrow{margin-left:auto;margin-right:auto}
+  .hero-btns,.hero-pills,.hero-stats{justify-content:center}
+  .hero-right{display:none}
+  .proj-grid{grid-template-columns:1fr 1fr}
+  .exp-card-inner{grid-template-columns:1fr}
+  .exp-img-side{min-height:140px}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .skill-grid,.ach-grid,.proj-grid,.cert-grid{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr;gap:3rem}
+  .section{padding:60px 5%}
+  .edu-card{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#hero">
+    <span class="nav-logo-mark">N</span>
+    Nandakishor PB
+  </a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#achievements">Wins</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#education">Education</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Contact</a>
+</nav>
+
+<section id="hero" class="sec-hero-bg">
+  <div class="hero-grid">
+    <div class="hero-left reveal">
+      <p class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        ECE '27 · IIIT Kottayam
+      </p>
+      <h1 class="hero-name">
+        Nandakishor<br>
+        <span class="last">P B</span>
+      </h1>
+      <p class="hero-role">
+        VLSI Design &nbsp;/&nbsp; DFT &amp; Verification &nbsp;/&nbsp;<br>
+        <span>FPGA &amp; Embedded Systems</span>
+      </p>
+      <p class="hero-desc">
+        Building silicon-level solutions — from analog CMOS layouts and physical verification to FPGA-accelerated AI systems and constrained-random UVM testbenches.
+      </p>
+      <div class="hero-pills">
+        <span class="hpill hp1">VLSI Design</span>
+        <span class="hpill hp2">DFT / ATPG</span>
+        <span class="hpill hp3">FPGA</span>
+        <span class="hpill hp4">UVM Verification</span>
+        <span class="hpill hp1">Analog CMOS</span>
+        <span class="hpill hp3">Computer Architecture</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-solid">View Projects ↓</a>
+        <a href="mailto:nandakishorpb70@gmail.com" class="btn-outline">Get in Touch</a>
+        <a href="https://github.com/Nandhakish0r" target="_blank" rel="noopener noreferrer" class="btn-outline">GitHub ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="stat-num sn2">12+</span><span class="stat-label">Projects</span></div>
+        <div><span class="stat-num sn3">#1</span><span class="stat-label">VLSID 2025</span></div>
+      </div>
+    </div>
+
+    <div class="hero-right reveal rd2" id="chipScene">
+      <div class="profile-frame">
+        <img src="images/me.jpeg" alt="Nandakishor PB"
+          onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,rgba(109,99,255,0.3),rgba(167,139,250,0.2));display:flex;align-items:center;justify-content:center;font-size:64px;\'>🧑‍💻</div>'"/>
+      </div>
+      <div class="fbadge fb1" style="color:#c8ceff">
+        <span class="fbd fbd1"></span><span>VLSID 2025 Winner 🏆</span>
+      </div>
+      <div class="fbadge fb2" style="color:#8ff0c8">
+        <span class="fbd fbd3"></span><span>UVM 91.67% Coverage</span>
+      </div>
+      <div class="fbadge fb3" style="color:#ffd66f">
+        <span class="fbd fbd4"></span><span>IHP 130nm · BGR Design</span>
+      </div>
+      <div class="fbadge fb4" style="color:#ffc2da">
+        <span class="fbd fbd2"></span><span>COMPUTER ARCHITECTURE</span>
+      </div>
+
+      <div class="dchip" id="dchip1" style="left:10px;top:30px">
+        <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="15" y="15" width="100" height="100" rx="5" fill="rgba(18,24,42,0.85)" stroke="rgba(200,206,255,0.4)" stroke-width="1.2"/>
+          <rect x="25" y="25" width="80" height="80" rx="3" fill="rgba(20,20,50,0.7)" stroke="rgba(200,206,255,0.12)" stroke-width="0.7"/>
+          <line x1="25" y1="51" x2="105" y2="51" stroke="rgba(200,206,255,0.08)" stroke-width="0.5"/>
+          <line x1="25" y1="65" x2="105" y2="65" stroke="rgba(200,206,255,0.08)" stroke-width="0.5"/>
+          <line x1="25" y1="79" x2="105" y2="79" stroke="rgba(200,206,255,0.08)" stroke-width="0.5"/>
+          <line x1="51" y1="25" x2="51" y2="105" stroke="rgba(200,206,255,0.08)" stroke-width="0.5"/>
+          <line x1="65" y1="25" x2="65" y2="105" stroke="rgba(200,206,255,0.08)" stroke-width="0.5"/>
+          <line x1="79" y1="25" x2="79" y2="105" stroke="rgba(200,206,255,0.08)" stroke-width="0.5"/>
+          <rect x="28" y="28" width="22" height="22" rx="1.5" fill="rgba(109,99,255,0.25)" stroke="rgba(200,206,255,0.4)" stroke-width="0.7"/>
+          <rect x="54" y="28" width="22" height="22" rx="1.5" fill="rgba(251,113,133,0.2)" stroke="rgba(255,194,218,0.35)" stroke-width="0.7"/>
+          <rect x="80" y="28" width="22" height="22" rx="1.5" fill="rgba(52,211,153,0.2)" stroke="rgba(143,240,200,0.35)" stroke-width="0.7"/>
+          <rect x="28" y="54" width="22" height="22" rx="1.5" fill="rgba(251,191,36,0.18)" stroke="rgba(255,225,138,0.32)" stroke-width="0.7"/>
+          <rect x="54" y="54" width="48" height="48" rx="1.5" fill="rgba(109,99,255,0.12)" stroke="rgba(200,206,255,0.25)" stroke-width="0.7"/>
+          <rect x="28" y="80" width="22" height="22" rx="1.5" fill="rgba(34,211,238,0.18)" stroke="rgba(143,243,255,0.32)" stroke-width="0.7"/>
+          <text x="39" y="41" font-family="JetBrains Mono,monospace" font-size="5.5" fill="rgba(200,206,255,0.85)" text-anchor="middle">ALU</text>
+          <text x="65" y="41" font-family="JetBrains Mono,monospace" font-size="5.5" fill="rgba(255,194,218,0.85)" text-anchor="middle">REG</text>
+          <text x="91" y="41" font-family="JetBrains Mono,monospace" font-size="5.5" fill="rgba(143,240,200,0.85)" text-anchor="middle">FPU</text>
+          <text x="39" y="67" font-family="JetBrains Mono,monospace" font-size="5.5" fill="rgba(255,225,138,0.85)" text-anchor="middle">MEM</text>
+          <text x="78" y="80" font-family="JetBrains Mono,monospace" font-size="5" fill="rgba(200,206,255,0.65)" text-anchor="middle">CTRL/FSM</text>
+          <text x="39" y="93" font-family="JetBrains Mono,monospace" font-size="5.5" fill="rgba(143,243,255,0.75)" text-anchor="middle">BUS</text>
+        </svg>
+      </div>
+
+      <div class="dchip" id="dchip2" style="right:5px;top:20px">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+          <rect x="8" y="8" width="84" height="84" rx="4" fill="rgba(18,24,42,0.85)" stroke="rgba(143,240,200,0.45)" stroke-width="1.1"/>
+          <rect x="16" y="16" width="68" height="68" rx="2" fill="rgba(52,211,153,0.06)" stroke="rgba(143,240,200,0.12)" stroke-width="0.5"/>
+          <g fill="rgba(52,211,153,0.2)" stroke="rgba(143,240,200,0.6)" stroke-width="0.6">
+            <circle cx="28" cy="28" r="4"/><circle cx="42" cy="28" r="4"/><circle cx="56" cy="28" r="4"/><circle cx="70" cy="28" r="4"/>
+            <circle cx="28" cy="42" r="4"/><circle cx="42" cy="42" r="4.5" fill="rgba(52,211,153,0.45)" stroke="rgba(143,240,200,0.9)"/><circle cx="56" cy="42" r="4"/><circle cx="70" cy="42" r="4"/>
+            <circle cx="28" cy="56" r="4"/><circle cx="42" cy="56" r="4"/><circle cx="56" cy="56" r="4"/><circle cx="70" cy="56" r="4"/>
+            <circle cx="28" cy="70" r="4"/><circle cx="42" cy="70" r="4"/><circle cx="56" cy="70" r="4"/><circle cx="70" cy="70" r="4"/>
+          </g>
+          <text x="50" y="90" font-family="JetBrains Mono,monospace" font-size="5" fill="rgba(143,240,200,0.45)" text-anchor="middle" letter-spacing="1.5">FPGA BGA</text>
+        </svg>
+      </div>
+
+      <div class="dchip" id="dchip3" style="right:20px;bottom:80px">
+        <svg width="85" height="85" viewBox="0 0 85 85" fill="none">
+          <rect x="10" y="10" width="65" height="65" rx="5" fill="rgba(18,24,42,0.85)" stroke="rgba(255,194,218,0.45)" stroke-width="1.1"/>
+          <circle cx="42" cy="42" r="18" fill="rgba(251,113,133,0.08)" stroke="rgba(255,194,218,0.25)" stroke-width="0.7"/>
+          <circle cx="42" cy="42" r="10" fill="rgba(251,113,133,0.12)" stroke="rgba(255,194,218,0.35)" stroke-width="0.7"/>
+          <circle cx="42" cy="42" r="3.5" fill="rgba(251,113,133,0.8)" style="filter:drop-shadow(0 0 4px rgba(251,113,133,0.8))"/>
+          <text x="42" y="79" font-family="JetBrains Mono,monospace" font-size="4.5" fill="rgba(255,194,218,0.45)" text-anchor="middle" letter-spacing="1">BGR</text>
+        </svg>
+      </div>
+
+      <div class="dchip" id="dchip4" style="left:5px;bottom:50px">
+        <svg width="130" height="55" viewBox="0 0 130 55" fill="none">
+          <rect x="8" y="8" width="114" height="39" rx="3" fill="rgba(18,24,42,0.85)" stroke="rgba(255,225,138,0.45)" stroke-width="1"/>
+          <rect x="16" y="14" width="98" height="27" rx="2" fill="rgba(251,191,36,0.05)" stroke="rgba(255,225,138,0.12)" stroke-width="0.5"/>
+          <rect x="20" y="17" width="26" height="21" rx="1" fill="rgba(251,191,36,0.12)" stroke="rgba(255,225,138,0.3)" stroke-width="0.6"/>
+          <rect x="52" y="17" width="26" height="21" rx="1" fill="rgba(251,191,36,0.1)" stroke="rgba(255,225,138,0.25)" stroke-width="0.6"/>
+          <rect x="84" y="17" width="26" height="21" rx="1" fill="rgba(251,191,36,0.14)" stroke="rgba(255,225,138,0.32)" stroke-width="0.6"/>
+          <text x="33" y="30" font-family="JetBrains Mono,monospace" font-size="5.5" fill="rgba(255,225,138,0.8)" text-anchor="middle">D0</text>
+          <text x="65" y="30" font-family="JetBrains Mono,monospace" font-size="5.5" fill="rgba(255,225,138,0.8)" text-anchor="middle">D1</text>
+          <text x="97" y="30" font-family="JetBrains Mono,monospace" font-size="5.5" fill="rgba(255,225,138,0.8)" text-anchor="middle">D2</text>
+          <text x="65" y="50" font-family="JetBrains Mono,monospace" font-size="4" fill="rgba(255,225,138,0.35)" text-anchor="middle" letter-spacing="1.5">SRAM 8-DEEP</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep-band">
+  <div class="sep-scroll">
+    <span class="sep-item">Verilog</span><span class="sep-item">SystemVerilog</span>
+    <span class="sep-item">UVM 1.2</span><span class="sep-item">DFT / ATPG</span>
+    <span class="sep-item">Yosys · Magic · Xschem</span><span class="sep-item">IHP 130nm</span>
+    <span class="sep-item">Vivado · Quartus</span><span class="sep-item">STM32 · ESP32</span>
+    <span class="sep-item">FPGA</span><span class="sep-item">Python · C++</span>
+    <span class="sep-item">MATLAB</span><span class="sep-item">NGSpice</span>
+    <span class="sep-item">Verilog</span><span class="sep-item">SystemVerilog</span>
+    <span class="sep-item">UVM 1.2</span><span class="sep-item">DFT / ATPG</span>
+    <span class="sep-item">Yosys · Magic · Xschem</span><span class="sep-item">IHP 130nm</span>
+    <span class="sep-item">Vivado · Quartus</span><span class="sep-item">STM32 · ESP32</span>
+    <span class="sep-item">FPGA</span><span class="sep-item">Python · C++</span>
+    <span class="sep-item">MATLAB</span><span class="sep-item">NGSpice</span>
+  </div>
+</div>
+
+<section id="skills" class="sec-skills-bg">
+  <div class="section">
+    <div class="sec-header reveal">
+      <span class="sec-label sl-cyan">// expertise</span>
+      <h2 class="sec-title">Skills &amp; Tools</h2>
+      <p class="sec-sub">From gate-level Verilog to physical layout — the full silicon stack.</p>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card glass-card reveal rd1">
+        <p class="sk-label sk-cyan">
+          <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="5" cy="5" r="1.5" fill="currentColor"/></svg>
+          HDL &amp; Verification
+        </p>
+        <div class="chip-wrap">
+          <span class="chip">Verilog</span><span class="chip">SystemVerilog</span>
+          <span class="chip">UVM 1.2</span><span class="chip">DFT</span>
+          <span class="chip">ATPG</span><span class="chip">5-valued D-calculus</span>
+        </div>
+      </div>
+      <div class="skill-card glass-card reveal rd2">
+        <p class="sk-label sk-amber">
+          <svg width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="1" width="8" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3.5" y="3.5" width="3" height="3" rx=".5" fill="currentColor"/></svg>
+          EDA &amp; VLSI Tools
+        </p>
+        <div class="chip-wrap">
+          <span class="chip">Yosys</span><span class="chip">Vivado</span>
+          <span class="chip">Quartus</span><span class="chip">Cadence</span>
+          <span class="chip">LTSpice</span><span class="chip">Magic</span>
+          <span class="chip">Xschem</span><span class="chip">NGSpice</span>
+          <span class="chip">Netgen</span><span class="chip">Riviera-PRO</span>
+        </div>
+      </div>
+      <div class="skill-card glass-card reveal rd1">
+        <p class="sk-label sk-emerald">
+          <svg width="10" height="10" viewBox="0 0 10 10"><polygon points="5,1 9,9 1,9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          Programming
+        </p>
+        <div class="chip-wrap">
+          <span class="chip">Python</span><span class="chip">C++</span>
+          <span class="chip">MATLAB</span><span class="chip">Shell</span>
+        </div>
+      </div>
+      <div class="skill-card glass-card reveal rd2">
+        <p class="sk-label sk-violet">
+          <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 5 Q5 1 9 5 Q5 9 1 5Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="5" cy="5" r="1" fill="currentColor"/></svg>
+          Embedded &amp; IoT
+        </p>
+        <div class="chip-wrap">
+          <span class="chip">STM32</span><span class="chip">ESP32</span>
+          <span class="chip">FPGA</span><span class="chip">Keil</span>
+          <span class="chip">Proteus</span><span class="chip">ESP8266</span>
+        </div>
+      </div>
+    </div>
+    <div class="courses-card glass-card reveal" style="margin-top:1.25rem">
+      <p class="sk-label sk-cyan" style="margin-bottom:.75rem">
+        <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="5" y1="2" x2="5" y2="8" stroke="currentColor" stroke-width="1.2"/><line x1="2" y1="5" x2="8" y2="5" stroke="currentColor" stroke-width="1.2"/></svg>
+        Relevant Coursework
+      </p>
+      <div class="chip-wrap">
+        <span class="chip">VLSI Testing &amp; Verification</span>
+        <span class="chip">VLSI Design</span>
+        <span class="chip">Computer Organisation</span>
+        <span class="chip">Digital Design with Verilog</span>
+        <span class="chip">Analog Electronics</span>
+        <span class="chip">Computer Architecture</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="sec-exp-bg">
+  <div class="section">
+    <div class="sec-header reveal">
+      <span class="sec-label sl-amber">// career</span>
+      <h2 class="sec-title">Experience</h2>
+      <p class="sec-sub">Internships and intensive programs at India's top research institutions.</p>
+    </div>
+    <div class="exp-list">
+
+      <div class="exp-card glass-card reveal-exp">
+        <div class="exp-card-inner">
+          <div class="exp-img-side">
+            <img src="images/experience/analog_vlsi.jpeg" alt="Analog VLSI Design Intern"
+              onerror="this.src='';this.parentElement.style.background='linear-gradient(135deg,rgba(251,191,36,0.15),rgba(251,191,36,0.05))'"/>
+          </div>
+          <div class="exp-text-side">
+            <p class="exp-period ep-amber">May — Jul 2025</p>
+            <p class="exp-org">Digital University Kerala</p>
+            <p class="exp-type">Internship</p>
+            <h3 class="exp-title">Analog VLSI Design Intern</h3>
+            <p class="exp-desc">Designed and simulated analog CMOS circuits on IHP 130nm — primary focus on Band Gap Reference (BGR) design. Schematic capture in Xschem, simulation in NGSpice, physical layout in Magic, LVS with Netgen. Analysed Vref stability, temperature coefficient, power, and line regulation.</p>
+          </div>
+            <a class="exp-github-link"
+     href="https://github.com/Nandhakish0r/VLSI-Design-Intern_Ihp_130nm_Technology"
+     target="_blank"
+     rel="noopener noreferrer">
+    <img src="https://cdn.simpleicons.org/github/ffffff"
+         alt="GitHub"
+         class="github-icon" />
+    <span>View on GitHub</span>
+  </a>
+        </div>
+      </div>
+
+      <div class="exp-card glass-card reveal-exp rd1">
+        <div class="exp-card-inner">
+          <div class="exp-img-side">
+            <img src="images/experience/computer_architecture.jpeg" alt="Computer Architecture"
+              onerror="this.src='';this.parentElement.style.background='linear-gradient(135deg,rgba(34,211,238,0.15),rgba(34,211,238,0.05))'"/>
+          </div>
+          <div class="exp-text-side">
+            <p class="exp-period ep-cyan">Mar — Jun 2025</p>
+            <p class="exp-org">IIT Hyderabad × Intel</p>
+            <p class="exp-type">Program</p>
+            <h3 class="exp-title">Next-Gen Computer Architecture</h3>
+            <p class="exp-desc">Intensive program by IIT Hyderabad CSE with Intel Corp. Covered modern processor architectures, memory hierarchies, compiler-level optimisations for CPU and GPU systems. Expert lectures, hands-on sessions, rigorous evaluations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-card glass-card reveal-exp rd2">
+        <div class="exp-card-inner">
+          <div class="exp-img-side">
+            <img src="images/experience/iswdp.jpeg" alt="ISWDP"
+              onerror="this.src='';this.parentElement.style.background='linear-gradient(135deg,rgba(52,211,153,0.15),rgba(52,211,153,0.05))'"/>
+          </div>
+          <div class="exp-text-side">
+            <p class="exp-period ep-emerald">Oct 2025</p>
+            <p class="exp-org">IISc Bengaluru</p>
+            <p class="exp-type">Certification Program</p>
+            <h3 class="exp-title">ISWDP — Synopsys × Samsung</h3>
+            <p class="exp-desc">Completed all three levels (Pre-requisite → Intermediate → Advanced) of the India Semiconductor Workforce Development Programme. Semiconductor device physics, TCAD modelling, 2D/3D process simulations, CMOS technology, Synopsys Sentaurus tools.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-card glass-card reveal-exp">
+        <div class="exp-card-inner">
+          <div class="exp-img-side">
+            <img src="images/experience/embedded_intern.jpeg" alt="Embedded Intern"
+              onerror="this.src='';this.parentElement.style.background='linear-gradient(135deg,rgba(167,139,250,0.15),rgba(167,139,250,0.05))'"/>
+          </div>
+          <div class="exp-text-side">
+            <p class="exp-period ep-violet">May — Jul 2024</p>
+            <p class="exp-org">NIELIT Calicut</p>
+            <p class="exp-type">Internship</p>
+            <h3 class="exp-title">Embedded Systems &amp; IoT Intern</h3>
+            <p class="exp-desc">STM32 embedded experiments via Keil. Multiple ESP32 projects focused on practical implementation. Developed MATLAB proficiency for analysis, simulation, and engineering problem-solving.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section id="projects" class="sec-proj-bg">
+  <div class="section">
+    <div class="sec-header reveal">
+      <span class="sec-label sl-emerald">// work</span>
+      <h2 class="sec-title">Projects</h2>
+      <p class="sec-sub">Hardware, verification, and AI-at-the-edge — built from the gates up.</p>
+    </div>
+    <div class="proj-grid">
+
+      <div class="proj-card glass-card pc1 reveal">
+        <div class="proj-img">
+          <img src="images/projects/uvm.jpeg" alt="FIFO UVM"
+            onerror="this.parentElement.innerHTML='<div class=proj-img-fallback><span class=pif-icon>⚙️</span><span class=pif-label>FIFO UVM</span></div>'"/>
+          <div class="proj-img-overlay"></div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-index">P01</p>
+          <h3 class="proj-name">FIFO Memory Verification — UVM</h3>
+          <p class="proj-desc">Complete UVM 1.2 testbench for 8-deep 8-bit synchronous FIFO. Full hierarchy, constrained-random sequences, 6-coverpoint covergroup. Coverage 73.15% → 91.67%. Zero mismatches.</p>
+          <div class="proj-tags">
+            <span class="ptag pt1">SystemVerilog</span><span class="ptag pt1">UVM 1.2</span>
+            <span class="ptag pt2">Riviera-PRO</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card glass-card pc2 reveal rd1">
+        <div class="proj-img">
+          <div class="proj-img-fallback">
+            
+          <img src="images/projects/dft.png" alt="FIFO UVM"
+          onerror="this.parentElement.innerHTML='<div class=proj-img-fallback><span class="pif-icon">🔬</span>
+            <span class="pif-label">D-Algo / PODEM</span>
+          </div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-index">P02</p>
+          <h3 class="proj-name">RISC-V DFT Processor</h3>
+          <p class="proj-desc">Implemented a complete Design-for-Testability (DFT) flow on
+             a multi-module RISC processor core. Integrated scan chains, 
+             scan flip-flops, ATPG generation, fault simulation, and synthesis using Yosys and 
+             open-source EDA tools to improve controllability, observability, and fault coverage..</p>
+          <div class="proj-tags">
+            <span class="ptag pt1">Yosys</span><span class="ptag pt3">Python</span>
+            <span class="ptag pt2">ATALANTA</span><span class="ptag pt1">DFT</span>
+              <a class="exp-github-link"
+     href="https://github.com/Nandhakish0r/Full-DFT-Implementation-on-a-Multi-Module-RISC-Processor-Core"
+     target="_blank"
+     rel="noopener noreferrer">
+    <img src="https://cdn.simpleicons.org/github/ffffff"
+         alt="GitHub"
+         class="github-icon" />
+    <span>View on GitHub</span>
+  </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card glass-card pc3 reveal rd2">
+        <div class="proj-img">
+          <img src="images/projects/AI-Driven Retail Automation.jpg" alt="AI Retail"
+            onerror="this.parentElement.innerHTML='<div class=proj-img-fallback><span class=pif-icon>🏆</span><span class=pif-label>AI Retail</span></div>'"/>
+          <div class="proj-img-overlay"></div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-index">P03</p>
+          <h3 class="proj-name">AI-Driven Retail Automation</h3>
+          <p class="proj-desc">VLSID 2025 winner — top 15 of 265. PolarFire SoC FPGA-accelerated CNN for real-time item detection. Integrated weighing, sealing, QR billing pipeline.</p>
+          <div class="proj-tags">
+            <span class="ptag pt4">PolarFire SoC</span><span class="ptag pt3">CNN</span>
+            <span class="ptag pt4">FPGA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card glass-card pc4 reveal">
+        <div class="proj-img">
+          <img src="images/projects/FPGA MazeSolver Bot.jpeg" alt="MazeSolver"
+            onerror="this.parentElement.innerHTML='<div class=proj-img-fallback><span class=pif-icon>🤖</span><span class=pif-label>MazeSolver Bot</span></div>'"/>
+          <div class="proj-img-overlay"></div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-index">P04</p>
+          <h3 class="proj-name">FPGA MazeSolver Bot</h3>
+          <p class="proj-desc">Autonomous Verilog bot on DE0-Nano Cyclone IV. Real-time path planning, ultrasonic + IR sensors, motor/servo control. eYRC 2025 Stage 2.</p>
+          <div class="proj-tags">
+            <span class="ptag pt1">Verilog</span><span class="ptag pt4">DE0-Nano</span>
+            <span class="ptag pt4">FPGA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card glass-card pc5 reveal rd1">
+        <div class="proj-img">
+          <img src="images/projects/fall_detection.jpeg" alt="Fall Detection"
+            onerror="this.parentElement.innerHTML='<div class=proj-img-fallback><span class=pif-icon>❤️</span><span class=pif-label>Fall Detection</span></div>'"/>
+          <div class="proj-img-overlay"></div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-index">P05</p>
+          <h3 class="proj-name">Wearable Fall Detection — SIH 2024</h3>
+          <p class="proj-desc">IoT fall-detection for elderly care. ESP32 master + ESP8266 mesh, threshold monitoring, cloud alerts and caregiver notifications. Built for SIH 2024.</p>
+          <div class="proj-tags">
+            <span class="ptag pt3">ESP32</span><span class="ptag pt3">IoT</span>
+            <span class="ptag pt1">Cloud</span>
+          </div>
+        </div>
+      </div>
+ <div class="proj-card glass-card pc6 reveal">
+        <div class="proj-img">
+          <img src="images/projects/vlsi_intern.png" alt="VLSI Intern"
+            onerror="this.parentElement.innerHTML='<div class=proj-img-fallback><span class=pif-icon>🤖</span><span class=pif-label>VLSI Intern</span></div>'"/>
+          <div class="proj-img-overlay"></div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-index">P06</p>
+          <h3 class="proj-name">Band_Gap_Reference circuit</h3>
+          <p class="proj-desc">Designed and simulated analog CMOS circuits using the IHP130 nm process with a focus on Bandgap Reference circuits. Performed schematic
+             design using Xschem, simulations using NGSpice, layout development in Magic, and LVS verification using Netgen..</p>
+          <div class="proj-tags">
+            <span class="ptag pt1">Verilog</span><span class="ptag pt3">XSCHEM</span><span class="ptag pt2">NGSPICE</span><span class="ptag pt3">MAGIC</span>
+              <a class="exp-github-link"
+     href="https://github.com/Nandhakish0r/VLSI-Design-Intern_Ihp_130nm_Technology"
+     target="_blank"
+     rel="noopener noreferrer">
+    <img src="https://cdn.simpleicons.org/github/ffffff"
+         alt="GitHub"
+         class="github-icon" />
+    <span>View on GitHub</span>
+  </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="achievements" class="sec-ach-bg">
+  <div class="section">
+    <div class="sec-header reveal">
+      <span class="sec-label sl-rose">// recognition</span>
+      <h2 class="sec-title">Achievements</h2>
+      <p class="sec-sub">National-level competitions, government programmes, and research awards.</p>
+    </div>
+    <div class="ach-grid">
+
+      <div class="ach-card ac1 reveal">
+        <div class="ach-bg">
+          <img src="images/achievements/vlsid_2025.jpeg" alt="VLSID 2025"
+            onerror="this.src='';this.parentElement.style.background='linear-gradient(135deg,rgba(109,99,255,0.4),rgba(8,10,20,0.9))'"/>
+        </div>
+        <div class="ach-overlay">
+          <div class="ach-trophy">🏆</div>
+          <h3 class="ach-title">Winner — VLSID 2025 Design Contest</h3>
+          <p class="ach-desc">AI-Driven Retail Automation on PolarFire SoC</p>
+          <span class="ach-badge ab1">Top 15 / 265 submissions</span>
+        </div>
+      </div>
+
+      <div class="ach-card ac2 reveal rd1">
+        <div class="ach-bg">
+          <img src="images/achievements/e-Yantra.png" alt="eYRC"
+            onerror="this.src='';this.parentElement.style.background='linear-gradient(135deg,rgba(251,113,133,0.4),rgba(8,10,20,0.9))'"/>
+        </div>
+        <div class="ach-overlay">
+          <h3 class="ach-title">e-Yantra Robotics (eYRC 2025)</h3>
+          <p class="ach-desc">Shortlisted for Stage 2, IIT Bombay. Qualified for MazeSolver Bot theme. Received official hardware kit. Ongoing.</p>
+          <span class="ach-badge ab2">IIT Bombay · Ongoing</span>
+        </div>
+      </div>
+
+      <div class="ach-card ac3 reveal">
+        <div class="ach-bg">
+          <img src="images/achievements/digital_india_grandchallange.jpeg" alt="DIR-V"
+            onerror="this.src='';this.parentElement.style.background='linear-gradient(135deg,rgba(52,211,153,0.4),rgba(8,10,20,0.9))'"/>
+        </div>
+        <div class="ach-overlay">
+          <h3 class="ach-title">Digital India RISC-V Challenge</h3>
+          <p class="ach-desc">DIR-V Grand Challenge, MeitY under C2S Programme. Ongoing.</p>
+          <span class="ach-badge ab3">MeitY · C2S · Ongoing</span>
+        </div>
+      </div>
+
+      <div class="ach-card ac4 reveal rd1">
+        <div class="ach-bg">
+          <img src="images/achievements/nss_best_volunteer.png" alt="NSS"
+            onerror="this.src='';this.parentElement.style.background='linear-gradient(135deg,rgba(167,139,250,0.4),rgba(8,10,20,0.9))'"/>
+        </div>
+        <div class="ach-overlay">
+          <div class="ach-trophy">⭐</div>
+          <h3 class="ach-title">NSS Best Volunteer</h3>
+          <p class="ach-desc">Best NSS Volunteer Award (2022) among 500 students.</p>
+          <span class="ach-badge ab4">National Service Scheme</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ═══ CERTIFICATIONS — CYAN/VIOLET ═══ -->
+<section id="certifications" class="sec-skills-bg">
+  <div class="section">
+    <div class="sec-header reveal">
+      <span class="sec-label sl-cyan">// credentials</span>
+      <h2 class="sec-title">Certifications</h2>
+      <p class="sec-sub">Programs, certifications, and domain-specific technical learning tracks.</p>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert-card glass-card reveal rd1">
+        <div class="cert-img-wrap">
+          <img src="images/certifications/iswdp.png" alt="ISWDP semiconductor certification overview" />
+        </div>
+        <div class="cert-body">
+          <div class="cert-top">
+            <div>
+              <h3 class="cert-name">ISWDP</h3>
+              <p class="cert-org">India Semiconductor Workforce Development Programme</p>
+            </div>
+            <span class="cert-badge">Semiconductor</span>
+          </div>
+          <p class="cert-desc">Completed the ISWDP program conducted by Synopsys in 
+            collaboration with Samsung, progressing through Pre-requisite, Intermediate, 
+            and Advanced levels. Gained hands-on experience in TCAD modeling, CMOS technology, 
+            semiconductor device physics, and Synopsys Sentaurus tools. </p>
+        </div>
+      </div>
+
+      <div class="cert-card glass-card reveal rd2">
+        <div class="cert-img-wrap">
+          <img src="images/certifications/computer_architecture.jpeg" alt="Computer Architecture certification" />
+        </div>
+        <div class="cert-body">
+          <div class="cert-top">
+            <div>
+              <h3 class="cert-name">Computer Architecture</h3>
+              <p class="cert-org">Advanced architecture program</p>
+            </div>
+            <span class="cert-badge">Architecture</span>
+          </div>
+          <p class="cert-desc">Focused learning in processor architecture, memory systems, and modern compute design.</p>
+        </div>
+      </div>
+
+      <div class="cert-card glass-card reveal rd1">
+        <div class="cert-img-wrap">
+          <img src="images/certifications/vlsid.jpeg" alt="VLSID certification" />
+        </div>
+        <div class="cert-body">
+          <div class="cert-top">
+            <div>
+              <h3 class="cert-name">VLSID 2025 Winner</h3>
+              <p class="cert-org">VLSI design and conference</p>
+            </div>
+            <span class="cert-badge">WINNER</span>
+          </div>
+          <p class="cert-desc">Winner of Design Contest at VLSID 2025 @MICROCHIP Track representing IIIT Kottayam. Recognized for 
+            innovation and technical excellence in VLSI design and semiconductor engineering at the international VLSI conference..</p>
+        </div>
+      </div>
+
+      <div class="cert-card glass-card reveal rd2">
+        <div class="cert-img-wrap">
+          <img src="images/certifications/analog_vlsi.jpeg" alt="Analog VLSI certification" />
+        </div>
+        <div class="cert-body">
+          <div class="cert-top">
+            <div>
+              <h3 class="cert-name">Analog VLSI</h3>
+              <p class="cert-org">Domain certification / training</p>
+            </div>
+            <span class="cert-badge">Silicon</span>
+          </div>
+          <p class="cert-desc">Training and certification exposure in analog VLSI concepts and circuit-level design fundamentals.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="sec-edu-bg">
+  <div class="section">
+    <div class="sec-header reveal">
+      <span class="sec-label sl-violet">// background</span>
+      <h2 class="sec-title">Education</h2>
+    </div>
+    <div class="edu-list">
+      <div class="edu-card glass-card reveal">
+        <div>
+          <h3 class="edu-deg">B.Tech — Electronics &amp; Communication Engineering</h3>
+          <p class="edu-inst">Indian Institute of Information Technology, Kottayam</p>
+        </div>
+        <div>
+          <p class="edu-score es1">8.1<span style="font-size:1rem;opacity:.5"> / 10</span></p>
+          <p class="edu-year">2023 — 2027</p>
+        </div>
+      </div>
+      <div class="edu-card glass-card reveal rd1">
+        <div>
+          <h3 class="edu-deg">12th — Kerala Board of Public Examination</h3>
+          <p class="edu-inst">Govt. HSS Mezhathur, Kerala</p>
+        </div>
+        <div>
+          <p class="edu-score es2">97.34<span style="font-size:1rem;opacity:.5">%</span></p>
+          <p class="edu-year">2022</p>
+        </div>
+      </div>
+      <div class="edu-card glass-card reveal rd2">
+        <div>
+          <h3 class="edu-deg">10th — Kerala Board of Public Examination</h3>
+          <p class="edu-inst">Govt. VHSS Vattenad, Kerala</p>
+        </div>
+        <div>
+          <p class="edu-score es3">99.99<span style="font-size:1rem;opacity:.5">%</span></p>
+          <p class="edu-year">2020</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="sec-contact-bg">
+  <div class="contact-inner">
+    <div class="reveal">
+      <h2 class="contact-heading">Let's build<br><span>something</span><br>together.</h2>
+      <p class="contact-sub">Open to VLSI/hardware internships, research collaborations, and full-time roles from 2027. I reply fast.</p>
+    </div>
+    <div class="contact-links reveal rd1">
+      <a href="mailto:nandakishorpb70@gmail.com" class="clcard">
+        <div class="cl-icon">✉️</div>
+        <div><p class="cl-type">Email</p><p class="cl-val">nandakishorpb70@gmail.com</p></div>
+      </a>
+      <a href="https://www.linkedin.com/in/nandakishor-pb-4a6425296" target="_blank" rel="noopener noreferrer" class="clcard">
+        <div class="cl-icon">💼</div>
+        <div><p class="cl-type">LinkedIn</p><p class="cl-val">linkedin.com/in/nandakishor-pb</p></div>
+      </a>
+      <a href="https://github.com/Nandhakish0r" target="_blank" rel="noopener noreferrer" class="clcard">
+        <div class="cl-icon">🐙</div>
+        <div><p class="cl-type">GitHub</p><p class="cl-val">github.com/Nandhakish0r</p></div>
+      </a>
+      <a href="tel:+917356560975" class="clcard">
+        <div class="cl-icon">📱</div>
+        <div><p class="cl-type">Phone</p><p class="cl-val">+91 73565 60975</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-copy">© 2025 Nandakishor P B · ECE '27 · IIIT Kottayam</p>
+  <div class="footer-links">
+    <a href="mailto:nandakishorpb70@gmail.com">Email</a>
+    <a href="https://github.com/Nandhakish0r" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/nandakishor-pb-4a6425296" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+function makeDraggable(el){
+  let dragging=false,ox=0,oy=0,floatPhase=Math.random()*Math.PI*2;
+  function tick(){
+    if(!dragging){
+      floatPhase+=0.016;
+      const fx=Math.sin(floatPhase*.7)*8,fy=Math.sin(floatPhase)*12,rot=Math.sin(floatPhase*.5)*4;
+      el.style.transform=`translate(${fx}px,${fy}px) rotate(${rot}deg)`;
+    }
+    requestAnimationFrame(tick);
+  }
+  tick();
+  el.addEventListener('mousedown',e=>{
+    dragging=true;el.style.zIndex=50;
+    el.style.filter='drop-shadow(0 16px 48px rgba(109,99,255,0.6))';
+    const rect=el.getBoundingClientRect();
+    ox=e.clientX-rect.left;oy=e.clientY-rect.top;
+    el.style.transition='none';e.preventDefault();
+  });
+  document.addEventListener('mousemove',e=>{
+    if(!dragging)return;
+    const parent=el.parentElement.getBoundingClientRect();
+    const vx=e.movementX;
+    el.style.left=(e.clientX-parent.left-ox)+'px';
+    el.style.top=(e.clientY-parent.top-oy)+'px';
+    el.style.transform=`rotate(${vx*1.2}deg) scale(1.08)`;
+  });
+  document.addEventListener('mouseup',()=>{
+    if(!dragging)return;
+    dragging=false;el.style.zIndex=10;
+    el.style.filter='drop-shadow(0 6px 24px rgba(109,99,255,0.25))';
+    floatPhase=Math.random()*Math.PI*2;
+  });
+  el.addEventListener('touchstart',e=>{
+    dragging=true;const t=e.touches[0];
+    const rect=el.getBoundingClientRect();
+    ox=t.clientX-rect.left;oy=t.clientY-rect.top;
+    el.style.zIndex=50;e.preventDefault();
+  },{passive:false});
+  document.addEventListener('touchmove',e=>{
+    if(!dragging)return;const t=e.touches[0];
+    const parent=el.parentElement.getBoundingClientRect();
+    el.style.left=(t.clientX-parent.left-ox)+'px';
+    el.style.top=(t.clientY-parent.top-oy)+'px';
+    e.preventDefault();
+  },{passive:false});
+  document.addEventListener('touchend',()=>{dragging=false;el.style.zIndex=10;});
+}
+['dchip1','dchip2','dchip3','dchip4'].forEach(id=>{
+  const el=document.getElementById(id);if(el)makeDraggable(el);
+});
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal, .reveal-exp').forEach(el=>obs.observe(el));
+
+const secs=document.querySelectorAll('section[id]');
+const navAs=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id;});
+  navAs.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--text-primary)':'';});
+},{passive:true});
+</script>
+</body>
+</html>
